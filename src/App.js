@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+// import logo from "./logo.svg";
+import "./App.css";
+import Launcher from "./components/Launcher";
+import Quotes from "./components/Quotes";
+import { useState } from "react";
 function App() {
+  const [showPortalName, setShowPortalName] = useState("Welcome To Sandbox");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="app-background">
+      <Quotes />
+      <Launcher setShowPortalName={setShowPortalName} />
+      <section className="portal-name">{showPortalName}</section>
+    </section>
   );
 }
 
